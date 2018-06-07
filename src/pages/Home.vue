@@ -1,18 +1,18 @@
 <template>
 <div>
        <b-jumbotron fluid>
-  <template slot="header">
+  <template slot="header" class="logo-container">
     Urbanatomy
   </template>
-  <template slot="lead">
+  <!-- <template slot="lead">
     This is a simple hero unit, a simple jumbotron-style component for
     calling extra attention to featured content or information.
-  </template>
+  </template> -->
   <hr class="my-4">
-  <p>
+  <h3>
     It uses utility classes for typography and spacing to space content
     out within the larger container.
-  </p>
+  </h3>
 </b-jumbotron> 
 <hr class="my-5">
 <b-container class="circles">
@@ -61,10 +61,23 @@
 
 </template>
 
-<style>
+<style scoped>
 
 .circles .col-lg-4 {
     text-align: center;
     margin-bottom: 2rem;
+}
+
+.logo {
+    width: 300px;
+}
+
+.logo-container {
+    text-align: center;
+}
+
+h1.display-3 {
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
 }
 </style>

@@ -13,7 +13,7 @@
                 tag="article"
                 class="mb-2">
             <p class="card-text">
-            Highlights: <template v-for="highlight in event.highlights">{{highlight}}</template>, etc.</p>
+                {{event.summary}}</p>
             <b-button :to="page+event.uid" variant="primary">View and Book</b-button>
         </b-card>
         </b-col>

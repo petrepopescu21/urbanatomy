@@ -100,7 +100,6 @@
                                   label-for="exampleInput4">
                         <div class="form-control">EUR {{this.total}}</div>
                     </b-form-group>
-                    <div id="paymentContainer"></div>
                 </b-form>
             </div>
         </b-modal>
@@ -152,25 +151,25 @@ export default {
       }
     }
   },
-  mounted() {
-    axios.get("https://coltalbdonations.herokuapp.com/getToken").then(res => {
-      dropin.create(
-        {
-          authorization: res.data.clientToken,
-          container: "#paymentContainer",
-          card: {
-            cardholderName: true,
-            overrides: {
-              styles: {}
-            }
-          }
-        },
-        (err, instance) => {
-          this.payment_instance = instance;
-        }
-      );
-    });
-  },
+//   mounted() {
+//     axios.get("https://coltalbdonations.herokuapp.com/getToken").then(res => {
+//       dropin.create(
+//         {
+//           authorization: res.data.clientToken,
+//           container: "#paymentContainer",
+//           card: {
+//             cardholderName: true,
+//             overrides: {
+//               styles: {}
+//             }
+//           }
+//         },
+//         (err, instance) => {
+//           this.payment_instance = instance;
+//         }
+//       );
+//     });
+//   },
   watch: {
       form(val) {
           if(val.count!=Math.floor(val.count))
