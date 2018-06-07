@@ -1,17 +1,23 @@
 <template>
     <b-container>
-        <div v-if="events">
-        <b-card v-for="event in events" v-bind:key="event.title" :title="event.title"
+        <h1 class="mt-4">Urban Experiences</h1>
+        <hr class="my-4">
+        <h5>Ut pellentesque est quis elit ullamcorper, at imperdiet diam iaculis. Nam non convallis ante. Nulla facilisi. Vestibulum sed velit scelerisque, imperdiet justo non, tempus nisl. Morbi ornare dui ut nisl ornare hendrerit. Cras eu consequat dui, et varius ligula. Cras maximus, ex nec lacinia vulputate, purus lectus scelerisque lectus, a vestibulum ligula nisl vitae diam. Pellentesque dictum fringilla porta. Nam nec enim eget justo tincidunt vestibulum.</h5>
+        <div class="mt-4" v-if="events">
+        <b-row fluid>
+        <b-col sm="12" md="6" lg="4" v-for="event in events" v-bind:key="event.uid">
+        <b-card :title="event.title"
                 :img-src="$i(event.image,600)"
                 img-alt="Image"
                 img-top
                 tag="article"
-                style="max-width: 20rem;"
                 class="mb-2">
             <p class="card-text">
             Highlights: <template v-for="highlight in event.highlights">{{highlight}}</template>, etc.</p>
             <b-button :to="page+event.uid" variant="primary">View and Book</b-button>
         </b-card>
+        </b-col>
+        </b-row>
         </div>
     </b-container>
 </template>

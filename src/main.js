@@ -8,6 +8,13 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import ContentfulPlugin from './plugins/contentful'
 import ImageHelper from './plugins/imagehelper'
+import * as VueGoogleMaps from "vue2-google-maps";
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: "AIzaSyAbq9azvJCmTXtTvRjn0xeaFScfu_BgoLQ",
+    libraries: "places" // necessary for places input
+  }
+});
 
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
